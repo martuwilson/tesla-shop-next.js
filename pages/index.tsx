@@ -11,10 +11,6 @@ export default function Home() {
       <Typography variant="h1" component='h1'>Tienda</Typography> {/* importante que sea H1 por el SEO */}
       <Typography variant="h2" sx={{mb:1}}>Todos los productos</Typography>
 
-
-
-      {/* home temporal */}
-
       <ProductList
         products={initialData.products as any} 
       />
