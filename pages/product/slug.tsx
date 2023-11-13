@@ -1,4 +1,5 @@
 import { ShopLayout } from '@/components/layouts'
+import { ProductSlideshow } from '@/components/products';
 import { initialData } from '@/database/products'
 import {Grid, Box, Typography, Button, Chip} from '@mui/material'
 import React from 'react'
@@ -15,7 +16,9 @@ const slug = () => {
       <Grid container spacing={3}>
         {/* izquierda */}
         <Grid item xs={12} sm={7}>
-          {/* slideshow */}
+          <ProductSlideshow
+            images={products.images}
+          />
         </Grid>
         {/* derecha */}
         <Grid item xs={12} sm={5}>
