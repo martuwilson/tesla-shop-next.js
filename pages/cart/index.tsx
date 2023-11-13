@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ShopLayout } from '@/components/layouts'
 import { Divider,Typography, Grid, Card, CardContent, Box, Button } from '@mui/material';
-import { CartList } from '@/components/cart';
+import { CartList, OrderResume } from '@/components/cart';
 
 const CartPage = () => {
   return (
@@ -10,10 +10,10 @@ const CartPage = () => {
             <Typography variant='h1' component='h1'>
                 Carrito de compras
             </Typography>
-            
+
             <Grid container>
                 <Grid xs={12} sm={7}>
-                    <CartList/>
+                    <CartList editable/>
                 </Grid>
 
                 <Grid xs={12} sm={5}>
@@ -23,8 +23,7 @@ const CartPage = () => {
                         <CardContent>
                             <Typography variant='h2' > Orden </Typography>
                             <Divider sx={{my:1}}/>
-                            {/* order summary */}
-
+                            <OrderResume/>
                             <Box sx={{
                                 mt:3
                             }}>

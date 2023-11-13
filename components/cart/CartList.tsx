@@ -1,4 +1,4 @@
-
+import {FC} from 'react'
 import {Typography, Grid, CardActionArea, CardMedia, Box, Button} from '@mui/material'
 
 import { initialData } from "@/database/products"
@@ -12,8 +12,14 @@ const productsInCart = [
     initialData.products[2]
 ]
 
+interface CartProps {
+    editable?: boolean;
+}
 
-export const CartList = () => {
+export const CartList:FC<CartProps> = ({ editable = false }) => {
+
+
+
   return (
     <>
         {
@@ -45,7 +51,11 @@ export const CartList = () => {
                                 Talle: <strong>M</strong>
                                 </Typography> 
                                 {/* condicional */}
-                                <ItemCounter/>
+
+                                {
+                                    editable ? 
+                                    <ItemCounter/> : <Typography variant='h5'>3</Typography>
+                                }
                             </Box>
                         </Grid>
 
@@ -54,9 +64,14 @@ export const CartList = () => {
                                 ${product.price}
                             </Typography>
                             {/* editable */}
-                            <Button variant='text' color="secondary" >
-                                Eliminar
-                            </Button>
+
+                            {
+                            editable ? 
+                                <Button variant='text' color="secondary" >
+                                    Eliminar
+                                </Button> : null
+                            }
+                            
                         </Grid>
 
                     </Grid>
