@@ -28,7 +28,6 @@ export const ProductSlideshow:FC<Props> = ({images}) => {
                             
                         }}
                         >
-
                         </div>
                     </div>
                 )

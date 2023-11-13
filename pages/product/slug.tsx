@@ -1,5 +1,6 @@
 import { ShopLayout } from '@/components/layouts'
 import { ProductSlideshow } from '@/components/products';
+import { ItemCounter } from '@/components/ui';
 import { initialData } from '@/database/products'
 import {Grid, Box, Typography, Button, Chip} from '@mui/material'
 import React from 'react'
@@ -39,7 +40,9 @@ const slug = () => {
               <Typography variant='subtitle2'>
                 Cantidad
               </Typography>
-              {/* item counter */}
+              
+              <ItemCounter/>
+
             </Box>
 
             {/* add cart */}
