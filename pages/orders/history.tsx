@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ShopLayout } from '@/components/layouts'
 import { Chip, Grid, Typography } from '@mui/material';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import Link from 'next/link';
 
 
@@ -24,7 +24,7 @@ const columns: GridColDef[] = [
         headerName: 'Pago',
         description: 'Muestra si esta pago o no',
         width: 200,
-        renderCell: (params: GridValueGetterParams) => {
+        renderCell: (params: GridRenderCellParams) => {
             return (
                 params.row.paid ?
                 <Chip label="Pagado" color="success" variant='outlined'/> :
@@ -37,7 +37,7 @@ const columns: GridColDef[] = [
         headerName: 'Ver Orden',
         width: 200,
         sortable: false,
-        renderCell: (params: GridValueGetterParams) => {
+        renderCell: (params: GridRenderCellParams) => {
             return (
                 <Link
                     href={
